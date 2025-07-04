@@ -79,6 +79,8 @@
     .product {
       background-color: rgba(0, 123, 255, 0.25);
       border: 1px solid #007bff;
+      width: 100%;
+      max-width: 800px;
     }
     .testimonial {
       background-color: rgba(255, 193, 7, 0.25);
@@ -113,6 +115,10 @@
       height: 24px;
     }
     @media (max-width: 768px) {
+      .product {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -164,18 +170,18 @@
       cursor: pointer;
       border-radius: 5px;
     }
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   </style>
   <script>
     function toggleDetails(index) {
       const product = document.querySelectorAll('.product')[index];
       product.classList.toggle('active');
-
       const button = product.querySelector('.product-toggle');
-      if (product.classList.contains('active')) {
-        button.textContent = '–';
-      } else {
-        button.textContent = '+';
-      }
+      button.textContent = product.classList.contains('active') ? '–' : '+';
     }
   </script>
 </head>
@@ -198,43 +204,55 @@
   </div>
 
   <section id="tentang">
-    <h2>Tentang Kami</h2>
+    <h2>Sekilas Tentang Kami</h2>
     <p>Solah Network adalah penyedia layanan internet lokal yang fokus pada kecepatan, kestabilan, dan dukungan pelanggan. Kami berkomitmen menyediakan solusi digital untuk segala kebutuhan koneksi Anda.</p>
   </section>
 
   <section id="layanan">
     <h2>Layanan Internet</h2>
     <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-      <div class="product" style="min-width: 280px; max-width: 320px;">
-        <h3>Paket SNP1</h3>
-        <p><strong>5 Mbps</strong></p>
-        <p>Untuk 1–4 perangkat</p>
-        <p>Tanpa batas kuota</p>
-        <button class="product-toggle" onclick="toggleDetails(0)">+</button>
+      <div class="product">
+        <div class="product-header">
+          <div>
+            <h3>Paket SNP1</h3>
+            <p><strong>5 Mbps</strong></p>
+            <p>Untuk 1–4 perangkat</p>
+            <p>Tanpa batas kuota</p>
+          </div>
+          <button class="product-toggle" onclick="toggleDetails(0)">+</button>
+        </div>
         <div class="product-details">
-          <p><strong>Harga:</strong> Rp 100.000/bulan</p>
+          <p><strong>Harga:</strong> Rp 150.000/bulan</p>
           <p>Cocok untuk rumah kecil, browsing dan streaming ringan.</p>
         </div>
       </div>
-      <div class="product" style="min-width: 280px; max-width: 320px;">
-        <h3>Paket SNP2</h3>
-        <p><strong>10 Mbps</strong></p>
-        <p>Untuk 5–7 perangkat + CCTV</p>
-        <p>Kontrol jarak jauh</p>
-        <button class="product-toggle" onclick="toggleDetails(1)">+</button>
+      <div class="product">
+        <div class="product-header">
+          <div>
+            <h3>Paket SNP2</h3>
+            <p><strong>10 Mbps</strong></p>
+            <p>Untuk 5–7 perangkat + CCTV</p>
+            <p>Kontrol jarak jauh</p>
+          </div>
+          <button class="product-toggle" onclick="toggleDetails(1)">+</button>
+        </div>
         <div class="product-details">
-          <p><strong>Harga:</strong> Rp 150.000/bulan</p>
+          <p><strong>Harga:</strong> Rp 250.000/bulan</p>
           <p>Layanan CCTV terintegrasi untuk rumah/toko.</p>
         </div>
       </div>
-      <div class="product" style="min-width: 280px; max-width: 320px;">
-        <h3>Paket SNP3</h3>
-        <p><strong>20 Mbps</strong></p>
-        <p>Untuk 8–10 perangkat + CCTV</p>
-        <p>Kontrol penuh & koneksi cepat</p>
-        <button class="product-toggle" onclick="toggleDetails(2)">+</button>
+      <div class="product">
+        <div class="product-header">
+          <div>
+            <h3>Paket SNP3</h3>
+            <p><strong>20 Mbps</strong></p>
+            <p>Untuk 8–10 perangkat + CCTV</p>
+            <p>Kontrol penuh & koneksi cepat</p>
+          </div>
+          <button class="product-toggle" onclick="toggleDetails(2)">+</button>
+        </div>
         <div class="product-details">
-          <p><strong>Harga:</strong> Rp 200.000/bulan</p>
+          <p><strong>Harga:</strong> Rp 350.000/bulan</p>
           <p>Koneksi optimal untuk keluarga besar atau kantor.</p>
         </div>
       </div>
